@@ -39,7 +39,7 @@ social:
   email: info@00.ong # change to your email address
   links:
     # The first element serves as the copyright owner's link
-  - https://b.00.ong/
+    - https://b.00.ong/
     - https://github.com/00ong # change to your GitHub homepage
     - https://learn.00.ong/
     - https://sc.00.ong/
@@ -102,11 +102,9 @@ cdn: ""
 
 # the avatar on sidebar, support local or CORS resources
 avatar: "/assets/img/favicons/favicon.svg"
-social_preview_image: "/assets/img/favicons/favicon.svg"
-
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+social_preview_image: "/assets/img/favicons/favicon.svg"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
