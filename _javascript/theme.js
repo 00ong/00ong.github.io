@@ -78,16 +78,25 @@ class Theme {
       return;
     }
 
+    const ensureAttr = () => {
+      const state = this.visualState;
+      document.documentElement.setAttribute(this.#modeAttr, state);
+      return state;
+    };
+
     this.#darkMedia.addEventListener('change', () => {
       const lastMode = this.#mode;
       this.#clearMode();
 
-      if (lastMode !== this.visualState) {
+      const currentMode = ensureAttr();
+
+      if (lastMode !== currentMode) {
         this.#notify();
       }
     });
 
     if (!this.#hasMode) {
+      ensureAttr();
       return;
     }
 
