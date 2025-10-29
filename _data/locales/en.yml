@@ -35,10 +35,10 @@ copyright:
     link: https://creativecommons.org/licenses/by/4.0/
 
   # Displayed in the footer
-  brief: Some rights reserved.
+  brief: Built with care for open ecosystems.
   verbose: >-
-    Except where otherwise noted, the blog posts on this site are licensed
-    under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
+    Source00 shares project notes, release updates, and stories from partners.
+    Unless a post states otherwise, feel free to remix under CC BY 4.0.
 
 meta: Using the :THEME theme for :PLATFORM.
 
