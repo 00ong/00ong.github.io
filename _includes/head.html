@@ -59,7 +59,14 @@
 
   {% include_cached favicons.html %}
 
-  <!-- Resource Hints -->
+  <!-- Resource Hints & Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <!-- Preload Critical Webfonts -->
+  <link rel="preload" href="{{ '/assets/fonts/FiraCode-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/Orbitron-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+
   {% unless site.assets.self_host.enabled %}
     {% for hint in site.data.origin.cors.resource_hints %}
       {% for link in hint.links %}
@@ -99,7 +106,7 @@
 
   <!-- Scripts -->
 
-  <script src="{{ '/assets/js/dist/theme.min.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/dist/theme.min.js' | relative_url }}"></script>
 
   {% include js-selector.html lang=lang %}
 
