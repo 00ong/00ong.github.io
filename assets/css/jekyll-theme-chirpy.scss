@@ -313,14 +313,14 @@ h6 {
   margin-bottom: 0.75rem;
 }
 
-/* Topbar & Clean Search Input */
+/* Topbar — flat, no floating pill */
 #topbar-wrapper {
-  background: var(--topbar-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  margin: 0.85rem 0.85rem 1.75rem;
-  box-shadow: none;
-  transition: background var(--transition), border-color var(--transition);
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  margin: 0 !important;
+  box-shadow: none !important;
 }
 
 #topbar {
@@ -328,31 +328,30 @@ h6 {
   color: var(--topbar-text-color);
 }
 
+/* Search — simple inline input, no double border */
 search {
-  border-radius: 8px !important;
-  border: 1px solid var(--color-border) !important;
-  background: var(--color-bg-alt) !important;
-  box-shadow: none !important;
-  display: flex !important;
-  align-items: center !important;
-  padding: 0.35rem 0.75rem !important;
-  height: 38px !important;
-}
-
-#search-input {
   border: none !important;
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
-  padding: 0 0.5rem !important;
+  padding: 0 !important;
+}
+
+#search-input {
+  border: 1px solid var(--color-border) !important;
+  border-radius: 6px !important;
+  background: var(--color-bg) !important;
+  box-shadow: none !important;
+  padding: 0.35rem 0.75rem !important;
   color: var(--color-text) !important;
   font-size: 0.875rem !important;
-  width: 100% !important;
+  height: 34px !important;
 }
 
 #search-input:focus {
+  border-color: var(--accent-blue) !important;
   box-shadow: none !important;
-  background: transparent !important;
+  outline: none !important;
 }
 
 /* Sidebar Styling & Clean Logo Avatar */
@@ -462,63 +461,72 @@ html[data-mode='dark'] .categories .list-group-item {
   font-weight: 600;
 }
 
-/* Post Cards & Previews */
+/* Post Cards — clean flat cards, no blur or float */
 #post-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0;
 }
 
 #post-list .post-preview {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  border-radius: var(--radius-lg);
-  background: var(--card-bg);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--card-shadow);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  padding: 1.25rem 0;
+  border-radius: 0;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  transition: none;
+}
+
+#post-list .post-preview:last-child {
+  border-bottom: none !important;
 }
 
 #post-list .post-preview:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-indigo);
-  background: var(--card-hover-bg);
+  transform: none;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
 #post-list .post-preview .post-title {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-  transition: color var(--transition-fast);
+  margin-bottom: 0.35rem;
+  color: var(--link-color);
+  transition: color 0.15s ease;
 }
 
 #post-list .post-preview:hover .post-title {
   color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+html[data-mode='dark'] #post-list .post-preview .post-title {
+  color: var(--accent-cyan);
 }
 
 html[data-mode='dark'] #post-list .post-preview:hover .post-title {
-  color: var(--accent-cyan);
+  color: #93c5fd;
 }
 
 #post-list .post-preview .post-content {
   color: var(--color-text-soft);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 #post-list .post-preview .post-meta {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--color-text-faint);
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 /* Buttons, Badges, and Tags */
